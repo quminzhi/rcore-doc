@@ -3,4 +3,17 @@ name = "demo"
 version = "0.1.0"
 edition = "2024"
 
+# library crate 配置（显式写出默认值）
+# name: 库名，默认等于 package name，use 时用这个名字
+# path: 库入口文件，默认 src/lib.rs
+[lib]
+name = "demo"
+path = "src/lib.rs"
+
+# binary crate 配置（显式写出默认值）
+# 一个 package 可以有多个 [[bin]]，但只能有一个 [lib]
+[[bin]]
+name = "demo"
+path = "src/main.rs"
+
 [dependencies]
