@@ -1,0 +1,11 @@
+[workspace]
+members = ["chp1-demo", "demo"]
+default-members = ["chp1-demo"]
+resolver = "3"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+debug = 2
