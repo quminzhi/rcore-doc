@@ -3,14 +3,17 @@
 
 use core::arch::global_asm;
 
+mod console;
 mod lang_items;
+mod sbi;
 
 global_asm!(include_str!("entry.asm"));
 
 #[unsafe(no_mangle)]
 pub extern "C" fn rust_main() -> ! {
     clear_bss();
-    loop {}
+    println!("OK");
+    panic!("Crash happened");
 }
 
 fn clear_bss() {
